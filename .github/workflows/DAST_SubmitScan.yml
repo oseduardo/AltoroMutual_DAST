@@ -3,7 +3,7 @@ name: Veracode DAST Scan Submission
 on:
   push:
     branches:
-      - 'main'
+      - default
 
 jobs:
 
@@ -19,5 +19,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             # Executes DAST Scan submission
-            - name: DAST Scan Submission
+            - name: Veracode DAST Scan
               run: echo "VERACODEDAST - Prueba de ejecución de pipeline de DAST"
