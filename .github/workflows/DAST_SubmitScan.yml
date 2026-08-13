@@ -6,8 +6,8 @@ on:
       - 'main'
 
 env:
-  VERACODE_API_ID: ${{ secrets.VERACODE_API_ID }}
-  VERACODE_API_KEY: ${{ secrets.VERACODE_API_KEY }}
+  VERACODE_API_KEY_ID: ${{ secrets.VERACODE_API_ID }}
+  VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY }}
 
 jobs:
 
