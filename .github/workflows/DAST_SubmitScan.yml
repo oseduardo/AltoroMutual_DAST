@@ -3,7 +3,7 @@ name: Veracode DAST Scan Submission
 on:
   push:
     branches:
-      - default_branch
+      - 'default_branch'
 
 jobs:
 
