@@ -5,6 +5,10 @@ on:
     branches:
       - 'main'
 
+env:
+  VERACODE_API_ID: ${{ secrets.VERACODE_API_ID }}
+  VERACODE_API_KEY: ${{ secrets.VERACODE_API_KEY }}
+
 jobs:
 
     VeracodeDAST:
