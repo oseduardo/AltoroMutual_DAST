@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-    Prepare:
+    VeracodeDAST:
         runs-on: ubuntu-latest
         steps:
             # Install Veracode CLI
@@ -18,11 +18,7 @@ jobs:
                 ./install
                 ./veracode version
 
-    VeracodeDAST:
-        needs: Prepare
-        runs-on: ubuntu-latest
-        steps:
-            # Executes DAST Scan submission
+            # Execute DAST Scan submission
             - name: Veracode DAST Scan
               run: |
                 echo "Submitting Veracode DAST Scan"
