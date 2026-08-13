@@ -10,9 +10,13 @@ jobs:
     Prepare:
         runs-on: ubuntu-latest
         steps:
-            # Prepare environment for scan submission
-            - name: Test print
-              run: echo "PREP - Prueba de preparación de ambiente"
+            # Install Veracode CLI
+            - name: Install Veracode CLI
+              run: |
+                curl -fsS -O https://tools.veracode.com/veracode-cli/install
+                chmod +x ./install
+                ./install
+                ./veracode version
 
     VeracodeDAST:
         needs: Prepare
@@ -20,4 +24,6 @@ jobs:
         steps:
             # Executes DAST Scan submission
             - name: Veracode DAST Scan
-              run: echo "VERACODEDAST - Prueba de ejecución de pipeline de DAST"
+              run: |
+                echo "Submitting Veracode DAST Scan"
+                ./veracode dynamic scan --webhook 4088954e-5c61-4714-a099-535825ed1074
